@@ -1,0 +1,6 @@
+ffmpeg
+ffprobe
+data
+env
+.idea
+.ipynb_checkpoints
