@@ -111,7 +111,7 @@ def train(hyperparameters, channel_input_dirs, num_gpus, hosts):
             with autograd.record():
                 output = net(data)
                 loss_result = loss(output, label)
-            loss_result.backward()
+                loss_result.backward()
             trainer.step(batch_size)
 
             curr_loss = nd.mean(loss_result).asscalar()
