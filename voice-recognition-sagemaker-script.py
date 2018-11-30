@@ -20,7 +20,7 @@ import numpy as np
 from mxnet import autograd, nd, gluon
 from mxnet.gluon import Trainer
 from mxnet.gluon.loss import SoftmaxCrossEntropyLoss
-from mxnet.gluon.nn import Conv2D, MaxPool2D, Dropout, Flatten, Dense, Sequential
+from mxnet.gluon.nn import Conv2D, MaxPool2D, Dropout, Dense, Sequential
 from mxnet.initializer import Xavier
 
 
@@ -83,7 +83,6 @@ def train(hyperparameters, channel_input_dirs, num_gpus, hosts):
         net.add(Conv2D(channels=32, kernel_size=(3, 3), padding=0, activation="relu"))
         net.add(MaxPool2D(pool_size=(2, 2)))
         net.add(Dropout(.25))
-        net.add(Flatten())
         net.add(Dense(8))
 
     ctx = mx.gpu() if num_gpus > 0 else mx.cpu()
