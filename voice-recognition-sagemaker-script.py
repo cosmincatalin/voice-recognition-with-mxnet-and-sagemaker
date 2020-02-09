@@ -42,7 +42,7 @@ environ["PATH"] += ":/tmp"
 
 rmtree("ffmpeg-tmp", True)
 makedirs("ffmpeg-tmp")
-urlretrieve("https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz",
+urlretrieve("https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz",
             "ffmpeg-tmp/ffmpeg-git-64bit-static.tar.xz")
 
 tar = tarfile.open("ffmpeg-tmp/ffmpeg-git-64bit-static.tar.xz")
